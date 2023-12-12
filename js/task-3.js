@@ -1,9 +1,12 @@
 'use strict';
 
 function getElementWidth(content, padding, border) {
-  const contentWidth = Number.parseInt(content);
-  const paddingWidth = Number.parseInt(padding);
-  const borderWidth = Number.parseInt(border);
+  // для отримання наведеного нижче результату, спочатку потрібно перетворити допустимі символи у числа.
+  let contentWidth = Number.parseFloat(content);
+  // тут дійсно пропустила момент із плаваючою крапкою - виправила.
+  let paddingWidth = Number.parseFloat(padding);
+  let borderWidth = Number.parseFloat(border);
+  // після чого проводимо математичні дії для отримання необхідного результату.
   return contentWidth + paddingWidth * 2 + borderWidth * 2;
 }
 
